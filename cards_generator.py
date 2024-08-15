@@ -11,13 +11,13 @@ from translate import Translator
 def write_csv(card_frontside, card_backside, csv_file):
 
     if not os.path.isfile('./'+csv_file):
-        with open(csv_file, 'w', newline='') as file:
+        with open(csv_file, 'w', newline='', encoding='UTF-8') as file:
             writer = csv.writer(file)
         
             writer.writerow([card_frontside, card_backside])
     else:
         # Write new cards into csv
-        with open(csv_file, 'a', newline='') as file:
+        with open(csv_file, 'a', newline='',encoding='UTF-8') as file:
             writer = csv.writer(file)
             
             writer.writerow([card_frontside, card_backside])
